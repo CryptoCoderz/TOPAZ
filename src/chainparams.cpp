@@ -104,7 +104,7 @@ public:
         }
         nTargetTimespan = 10 * nTargetSpacing;
         nLastPoWBlock = 9999999; // PoW does not stop - TODO: Remove PoW height check, it's not needed
-        nStartPoSBlock = 5000;
+        nStartPoSBlock = 1135;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
