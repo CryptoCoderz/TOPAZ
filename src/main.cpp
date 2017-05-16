@@ -975,37 +975,36 @@ int64_t GetProofOfWorkReward(int64_t nHeight, int64_t nFees)
         }
         else if(nHeight > (5000 * 2))
         {
-            nSubsidy -= (0.1 * 2); 
+            nSubsidy = (0.8 * COIN);
         }
         else if(nHeight > (5000 * 3))
         {
-            nSubsidy -= (0.1 * 3); 
+            nSubsidy = (0.7 * COIN);
         }
         else if(nHeight > (5000 * 4))
         {
-            nSubsidy -= (0.1 * 4); 
+            nSubsidy = (0.6 * COIN);
         }
         else if(nHeight > (5000 * 5))
         {
-            nSubsidy -= (0.1 * 5); 
+            nSubsidy = (0.5 * COIN);
         }
         else if(nHeight > (5000 * 6))
         {
-            nSubsidy -= (0.1 * 6); 
+            nSubsidy = (0.4 * COIN);
         }
         else if(nHeight > (5000 * 7))
         {
-            nSubsidy -= (0.1 * 7); 
+            nSubsidy = (0.3 * COIN);
         }
         else if(nHeight > (5000 * 8))
         {
-            nSubsidy -= (0.1 * 8); 
+            nSubsidy = (0.2 * COIN);
         }
         else if(nHeight > (5000 * 9))
         {
-            nSubsidy -= (0.1 * 9); 
+            nSubsidy = (0.1 * COIN);
         }
-
     }
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
