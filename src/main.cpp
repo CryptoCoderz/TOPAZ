@@ -975,33 +975,37 @@ int64_t GetProofOfWorkReward(int64_t nHeight, int64_t nFees)
         }
         else if(nHeight > (5000 * 2))
         {
-            nSubsidy = (0.8 * COIN);
+            nSubsidy = (0.9 * COIN);
         }
         else if(nHeight > (5000 * 3))
         {
-            nSubsidy = (0.7 * COIN);
+            nSubsidy = (0.8 * COIN);
         }
         else if(nHeight > (5000 * 4))
         {
-            nSubsidy = (0.6 * COIN);
+            nSubsidy = (0.7 * COIN);
         }
         else if(nHeight > (5000 * 5))
         {
-            nSubsidy = (0.5 * COIN);
+            nSubsidy = (0.6 * COIN);
         }
         else if(nHeight > (5000 * 6))
         {
-            nSubsidy = (0.4 * COIN);
+            nSubsidy = (0.5 * COIN);
         }
         else if(nHeight > (5000 * 7))
         {
-            nSubsidy = (0.3 * COIN);
+            nSubsidy = (0.4 * COIN);
         }
         else if(nHeight > (5000 * 8))
         {
-            nSubsidy = (0.2 * COIN);
+            nSubsidy = (0.3 * COIN);
         }
         else if(nHeight > (5000 * 9))
+        {
+            nSubsidy = (0.2 * COIN);
+        }
+        else if(nHeight > (5000 * 10))
         {
             nSubsidy = (0.1 * COIN);
         }
