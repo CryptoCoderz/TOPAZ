@@ -1,6 +1,6 @@
 TEMPLATE = app
 TARGET = TopazCoin-qt
-VERSION = 1.0.6.0
+VERSION = 1.0.7.0
 INCLUDEPATH += src src/json src/qt
 QT += network
 DEFINES += ENABLE_WALLET
@@ -243,6 +243,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/rpcclient.h \
     src/rpcprotocol.h \
     src/rpcserver.h \
+    src/rpcvelocity.h \
     src/timedata.h \
     src/qt/overviewpage.h \
     src/qt/csvmodelwriter.h \
@@ -259,6 +260,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/ui_interface.h \
     src/qt/rpcconsole.h \
     src/version.h \
+    src/velocity.h \
     src/netbase.h \
     src/clientversion.h \
     src/threadsafety.h \
@@ -328,6 +330,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/bitcoinstrings.cpp \
     src/qt/bitcoinamountfield.cpp \
     src/wallet.cpp \
+    src/velocity.cpp \
     src/keystore.cpp \
     src/qt/transactionfilterproxy.cpp \
     src/qt/transactionview.cpp \
@@ -340,6 +343,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/rpcnet.cpp \
     src/rpcmining.cpp \
     src/rpcwallet.cpp \
+    src/rpcvelocity.cpp \
     src/rpcblockchain.cpp \
     src/rpcrawtransaction.cpp \
     src/timedata.cpp \

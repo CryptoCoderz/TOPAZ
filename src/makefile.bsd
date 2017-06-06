@@ -96,6 +96,7 @@ xLDFLAGS=$(LDHARDENING) $(LDFLAGS)
 OBJS= \
     obj/alert.o \
     obj/version.o \
+    obj/velocity.o \
     obj/checkpoints.o \
     obj/netbase.o \
     obj/addrman.o \
@@ -115,6 +116,7 @@ OBJS= \
     obj/rpcnet.o \
     obj/rpcblockchain.o \
     obj/rpcrawtransaction.o \
+    obj/rpcvelocity.o \
     obj/timedata.o \
     obj/script.o \
     obj/sync.o \

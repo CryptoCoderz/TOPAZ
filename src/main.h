@@ -11,10 +11,15 @@
 #include "txmempool.h"
 #include "net.h"
 #include "hashblock.h"
-//#include "script.h"
-//#include "scrypt.h"
 
 #include <list>
+
+// Define difficulty retarget algorithms
+enum DiffMode {
+    DIFF_DEFAULT = 0, // Default to invalid 0
+    DIFF_DGW     = 1, // Retarget using DarkGravityWave
+    DIFF_VRX     = 2, // Retarget using Terminal-Velocity-RateX
+};
 
 class CBlock;
 class CBlockIndex;
@@ -46,6 +51,10 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 10000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
+/** Minimum TX count (for relaying) */
+static const int64_t MIN_TX_COUNT = 0;
+/** Minimum TX value (for relaying) */
+static const int64_t MIN_TX_VALUE = 0.01 * COIN;
 /** No amount larger than this (in satoshi) is valid */
 static const int64_t MAX_MONEY = 750000 * COIN; // 500K Softcap, 750K Maximum single TX (Allowing for inflation)
 /** Targer block spacing */
@@ -57,6 +66,16 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 static const int64_t COIN_YEAR_REWARD = 200 * CENT; // ~20% Annualy
 /** Futuredrift */
 inline int64_t FutureDrift(int64_t nTime) { return nTime + 10 * 60; }
+/** Velocity toggle block */
+static const int64_t VELOCITY_TOGGLE = 30000; // Implementation of the Velocity system into the chain.
+/** Velocity retarget toggle block */
+static const int64_t VELOCITY_TDIFF = 30000; // Use Velocity's retargetting method.
+/** Block spacing preferred */
+static const int64_t BLOCK_SPACING = 5 * 60;
+/** Block spacing minimum */
+static const int64_t BLOCK_SPACING_MIN = 3.5 * 60;
+/** Block spacing maximum */
+static const int64_t BLOCK_SPACING_MAX = 7.5 * 60;
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
